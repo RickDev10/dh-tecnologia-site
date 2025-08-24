@@ -1,0 +1,26 @@
+{
+  "name": "DH Tecnologia - Transformação Digital com IA",
+  "short_name": "DH Tecnologia",
+  "description": "O parceiro desafiador em transformação digital. Construímos Agentes de IA que geram ROI real para seu negócio.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#f97316",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "categories": ["business", "productivity", "technology"],
+  "lang": "pt-BR"
+}
