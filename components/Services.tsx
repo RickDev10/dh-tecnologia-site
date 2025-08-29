@@ -51,6 +51,13 @@ const Services = () => {
       color: 'from-orange-500 to-red-500'
     },
     {
+      icon: BarChart3,
+      title: 'Agente Agronegócio',
+      description: 'Soluções inteligentes para o setor agrícola. Agentes especializados em coleta de dados de colheitas e plantios, análise de estoque de insumos e combustíveis, e localização em tempo real dos operadores.',
+      features: ['Monitoramento de culturas', 'Localização em tempo real', 'Gestão de recursos'],
+      color: 'from-green-600 to-green-400'
+    },
+    {
       icon: Settings,
       title: 'Agentes de IA Personalizados',
       description: 'Soluções de inteligência de workflow sob medida. Agentes de IA projetados para seus processos de negócios únicos, desde processamento de faturas até monitoramento de conformidade.',
@@ -168,6 +175,30 @@ const Services = () => {
                 <motion.button
                   whileHover={{ x: 5 }}
                   whileTap={{ scale: 0.95 }}
+                  onClick={() => {
+                    switch(service.title) {
+                      case 'Agentes de Vendas':
+                        window.location.href = '/vendas'
+                        break
+                      case 'Agentes de Dados & Analytics':
+                        window.location.href = '/dados-analytics'
+                        break
+                      case 'Agentes de Atendimento':
+                        window.location.href = '/atendimento'
+                        break
+                      case 'Agentes de RH':
+                        window.location.href = '/rh'
+                        break
+                      case 'Agente Agronegócio':
+                        window.location.href = '/agronegocio'
+                        break
+                      case 'Agentes de IA Personalizados':
+                        window.location.href = '/personalizados'
+                        break
+                      default:
+                        break
+                    }
+                  }}
                   className="flex items-center space-x-2 text-primary-500 hover:text-primary-400 transition-colors duration-200"
                 >
                   <span className="font-semibold">Saiba mais</span>

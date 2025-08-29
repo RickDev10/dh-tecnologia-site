@@ -12,12 +12,22 @@ import {
   Zap,
   Shield
 } from 'lucide-react'
+import toast from 'react-hot-toast'
 
 const Process = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   })
+
+  const handleScheduleMeeting = () => {
+    toast.success('Abrindo WhatsApp...')
+    const message = encodeURIComponent('Olá! Gostaria de agendar uma consulta gratuita para conhecer melhor os serviços da DH Tecnologia.')
+    const whatsappUrl = `https://wa.me/5514991239292?text=${message}`
+    setTimeout(() => {
+      window.open(whatsappUrl, '_blank')
+    }, 1000)
+  }
 
   const steps = [
     {
@@ -105,7 +115,7 @@ const Process = () => {
   }
 
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section id="about" className="py-20 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-dark-900 to-dark-950"></div>
       
@@ -248,6 +258,7 @@ const Process = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={handleScheduleMeeting}
               className="btn-primary flex items-center space-x-2 mx-auto"
             >
               <span>Agendar Consulta Gratuita</span>

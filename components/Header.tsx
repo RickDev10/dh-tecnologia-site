@@ -19,10 +19,11 @@ const Header = () => {
   }, [])
 
   const handleScheduleMeeting = () => {
-    toast.success('Redirecionando para agendamento...')
-    // Aqui você pode adicionar a lógica para abrir o calendário ou formulário
+    toast.success('Abrindo WhatsApp...')
+    const message = encodeURIComponent('Olá! Gostaria de agendar uma reunião para conhecer melhor os serviços da DH Tecnologia.')
+    const whatsappUrl = `https://wa.me/5514991239292?text=${message}`
     setTimeout(() => {
-      window.open('https://calendly.com/dhtecnologia', '_blank')
+      window.open(whatsappUrl, '_blank')
     }, 1000)
   }
 
@@ -45,7 +46,7 @@ const Header = () => {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 h-20 ${
         isScrolled
           ? 'bg-dark-950/95 backdrop-blur-md border-b border-dark-800'
           : 'bg-transparent'

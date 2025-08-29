@@ -2,9 +2,6 @@
 
 import { motion } from 'framer-motion'
 import { 
-  Linkedin, 
-  Twitter, 
-  Instagram, 
   Mail, 
   Phone, 
   MapPin,
@@ -40,20 +37,16 @@ const Footer = () => {
     ],
   }
 
-  const socialLinks = [
-    { icon: Linkedin, href: 'https://linkedin.com/company/dhtecnologia', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com/dhtecnologia', label: 'Twitter' },
-    { icon: Instagram, href: 'https://instagram.com/dhtecnologia', label: 'Instagram' },
-  ]
+
 
   const contactInfo = [
     { icon: Mail, text: 'contato@dhtecnologia.com.br', href: 'mailto:contato@dhtecnologia.com.br' },
-    { icon: Phone, text: '+55 (11) 99999-9999', href: 'tel:+5511999999999' },
-    { icon: MapPin, text: 'São Paulo, SP - Brasil', href: '#' },
+    { icon: Phone, text: '+55 (14) 99123-9292', href: 'https://wa.me/5514991239292' },
+    { icon: MapPin, text: 'Jaú, SP - Brasil', href: '#' },
   ]
 
   return (
-    <footer className="bg-dark-950 border-t border-dark-800 relative overflow-hidden">
+    <footer id="contact" className="bg-dark-950 border-t border-dark-800 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(249,115,22,0.05),transparent_50%)]"></div>
       
@@ -75,24 +68,6 @@ const Footer = () => {
             <p className="text-gray-400 mb-6 leading-relaxed">
               DH Tecnologia é um parceiro de soluções de IA que impulsiona a produtividade e escalabilidade do seu negócio através de agentes inteligentes e automação avançada.
             </p>
-            
-            {/* Social Links */}
-            <div className="flex space-x-4">
-              {socialLinks.map((social, index) => (
-                <motion.a
-                  key={index}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-10 h-10 bg-dark-800 hover:bg-primary-500 rounded-lg flex items-center justify-center transition-all duration-300 group"
-                  aria-label={social.label}
-                >
-                  <social.icon className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors duration-300" />
-                </motion.a>
-              ))}
-            </div>
           </motion.div>
 
           {/* Services Links */}

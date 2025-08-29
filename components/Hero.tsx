@@ -9,12 +9,15 @@ const Hero = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
+    rootMargin: '-50px 0px',
   })
 
   const handleScheduleMeeting = () => {
-    toast.success('Redirecionando para agendamento...')
+    toast.success('Abrindo WhatsApp...')
+    const message = encodeURIComponent('Olá! Gostaria de agendar uma reunião para conhecer melhor os serviços da DH Tecnologia.')
+    const whatsappUrl = `https://wa.me/5514991239292?text=${message}`
     setTimeout(() => {
-      window.open('https://calendly.com/dhtecnologia', '_blank')
+      window.open(whatsappUrl, '_blank')
     }, 1000)
   }
 
@@ -57,16 +60,16 @@ const Hero = () => {
           {/* Content */}
           <motion.div
             ref={ref}
-            initial={{ opacity: 0, x: -50 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            initial={{ opacity: 1, x: 0 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
             className="space-y-8"
           >
             <div className="space-y-6">
               <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                initial={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.1 }}
                 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight"
               >
                 Construímos{' '}
@@ -77,9 +80,9 @@ const Hero = () => {
               </motion.h1>
               
               <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.4 }}
+                initial={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.2 }}
                 className="text-xl text-gray-300 leading-relaxed max-w-2xl"
               >
                 O parceiro desafiador em transformação digital. Confiado por mais de 7.000 profissionais de IA: 
@@ -89,9 +92,9 @@ const Hero = () => {
 
             {/* Stats */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              initial={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: 0.3 }}
               className="grid grid-cols-3 gap-6"
             >
               {stats.map((stat, index) => (
